@@ -12,32 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library quiver.all_tests;
+library quiver.collection.all_tests;
 
-import 'async/all_tests.dart' as async;
-import 'cache/map_cache_test.dart' as cache;
-import 'check_test.dart' as check;
-import 'collection/all_tests.dart' as collection;
-import 'core/all_tests.dart' as core;
-import 'io_test.dart' as io;
-import 'iterables/all_tests.dart' as iterables;
-import 'mirrors_test.dart' as mirrors;
-import 'pattern/all_tests.dart' as pattern;
-import 'strings_test.dart' as strings;
-import 'testing/all_tests.dart' as testing;
-import 'time/all_tests.dart' as time;
+import 'bimap_test.dart' as bimap;
+import 'collection_test.dart' as collection;
+import 'lru_map_test.dart' as lru_map;
+import 'multimap_test.dart' as multimap;
+import 'treeset_test.dart' as treeset;
+import 'delegates/iterable_test.dart' as iterable;
+import 'delegates/list_test.dart' as list;
+import 'delegates/map_test.dart' as map;
+import 'delegates/queue_test.dart' as queue;
+import 'delegates/set_test.dart' as set;
 
 main() {
-  async.main();
-  cache.main();
-  check.main();
+  bimap.main();
   collection.main();
-  core.main();
-  io.main();
-  iterables.main();
-  mirrors.main();
-  pattern.main();
-  strings.main();
-  testing.main();
-  time.main();
+  lru_map.main();
+  multimap.main();
+  iterable.main();
+  list.main();
+  map.main();
+  queue.main();
+  set.main();
+  treeset.main();
 }
