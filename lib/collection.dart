@@ -23,15 +23,15 @@ import 'dart:math';
 import 'package:quiver/core.dart';
 import 'package:quiver/iterables.dart';
 
-part 'src/collection/bimap.dart';
-part 'src/collection/lru_map.dart';
-part 'src/collection/multimap.dart';
-part 'src/collection/treeset.dart';
-part 'src/collection/delegates/iterable.dart';
-part 'src/collection/delegates/list.dart';
-part 'src/collection/delegates/map.dart';
-part 'src/collection/delegates/queue.dart';
-part 'src/collection/delegates/set.dart';
+part 'src/bimap.dart';
+part 'src/lru_map.dart';
+part 'src/multimap.dart';
+part 'src/treeset.dart';
+part 'src/delegates/iterable.dart';
+part 'src/delegates/list.dart';
+part 'src/delegates/map.dart';
+part 'src/delegates/queue.dart';
+part 'src/delegates/set.dart';
 
 /**
  * Checks [List]s [a] and [b] for equality.
