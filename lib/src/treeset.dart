@@ -59,7 +59,6 @@ abstract class TreeSet<V> extends IterableBase<V> implements Set<V> {
 
 /// Controls the results for [TreeSet.searchNearest]()
 enum TreeSearch {
-
   /// If result not found, always chose the smaller element
   LESS_THAN,
 
@@ -785,9 +784,7 @@ class AvlTreeSet<V> extends TreeSet<V> {
     }
 
     // Non-optimized version.
-    return set
-      ..addAll(this)
-      ..addAll(other);
+    return set..addAll(this)..addAll(other);
   }
 
   /// See [Set.difference]

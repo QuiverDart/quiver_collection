@@ -78,7 +78,6 @@ abstract class Multimap<K, V> {
   /// Returns a view of this multimap as a map.
   Map<K, Iterable<V>> asMap();
 
-
   /// The number of keys in the multimap.
   int get length;
 
@@ -181,6 +180,7 @@ class ListMultimap<K, V> extends _BaseMultimap<K, V, List<V>> {
   void _add(List<V> iterable, V value) {
     iterable.add(value);
   }
+
   @override
   void _addAll(List<V> iterable, Iterable<V> value) => iterable.addAll(value);
   @override
@@ -205,6 +205,7 @@ class SetMultimap<K, V> extends _BaseMultimap<K, V, Set<V>> {
   void _add(Set<V> iterable, V value) {
     iterable.add(value);
   }
+
   @override
   void _addAll(Set<V> iterable, Iterable<V> value) => iterable.addAll(value);
   @override
