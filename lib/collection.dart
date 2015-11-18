@@ -18,7 +18,7 @@ library quiver.collection;
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:quiver/iterables.dart';
+import 'package:quiver_iterables/iterables.dart';
 
 part 'src/bimap.dart';
 part 'src/lru_map.dart';
