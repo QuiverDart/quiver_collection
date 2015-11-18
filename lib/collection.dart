@@ -18,7 +18,6 @@ library quiver.collection;
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:quiver/core.dart';
 import 'package:quiver/iterables.dart';
 
 part 'src/bimap.dart';

@@ -64,7 +64,7 @@ class LinkedLruHashMap<K, V> implements LruMap<K, V> {
   LinkedLruHashMap._fromMap(this._entries, {int maximumSize})
       // This pattern is used instead of a default value because we want to
       // be able to respect null values coming in from MapCache.lru.
-      : _maximumSize = firstNonNull(maximumSize, _DEFAULT_MAXIMUM_SIZE);
+      : _maximumSize = maximumSize ?? _DEFAULT_MAXIMUM_SIZE;
 
   /// Adds all key-value pairs of [other] to this map.
   ///
