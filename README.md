@@ -1,4 +1,4 @@
-Quiver collections
+Quiver Collections
 ==================
 
 A collection of collection classes for use in Dart.
@@ -8,7 +8,7 @@ A collection of collection classes for use in Dart.
 
 ## Documentation
 
-[API Docs](http://www.dartdocs.org/documentation/quiver_collection/latest) are available.
+[API Docs](http://www.dartdocs.org/documentation/quiver_collection/latest)
 
 `listsEqual`, `mapsEqual` and `setsEqual` check collections for equality.
 
