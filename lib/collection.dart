@@ -22,6 +22,7 @@ import 'package:quiver_iterables/iterables.dart';
 
 part 'src/bimap.dart';
 part 'src/lru_map.dart';
+part 'src/lru_set.dart';
 part 'src/multimap.dart';
 part 'src/treeset.dart';
 part 'src/delegates/iterable.dart';
