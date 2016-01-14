@@ -74,7 +74,7 @@ class LinkedLruHashSet<E> extends SetBase<E> implements LruSet<E> {
   LinkedLruHashSet._fromSet(this._entries, {int maximumSize})
       // This pattern is used instead of a default value because we want to
       // be able to respect null values coming in from MapCache.lru.
-      : _maximumSize = firstNonNull(maximumSize, _DEFAULT_MAXIMUM_SIZE);
+      : _maximumSize = maximumSize ?? _DEFAULT_MAXIMUM_SIZE;
 
   /**
    * If [element] already exists, promotes it to the MRU position.
