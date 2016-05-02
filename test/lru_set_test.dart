@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library quiver.collection.lru_map_test;
+library quiver.collection.lru_set_test;
 
 import 'package:quiver_collection/collection.dart';
 import 'package:test/test.dart';
