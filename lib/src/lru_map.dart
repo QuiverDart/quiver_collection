@@ -35,30 +35,30 @@ abstract class LruMap<K, V> implements Map<K, V> {
 
 /// Simple implementation of a linked-list entry that contains a [key] and
 /// [value].
-class _LinkedEntry<K, V> {
+class _LinkedMapEntry<K, V> {
   K key;
   V value;
 
-  _LinkedEntry<K, V> next;
-  _LinkedEntry<K, V> previous;
+  _LinkedMapEntry<K, V> next;
+  _LinkedMapEntry<K, V> previous;
 
-  _LinkedEntry([this.key, this.value]);
+  _LinkedMapEntry([this.key, this.value]);
 }
 
 /// A linked hash-table based implementation of [LruMap].
 class LinkedLruHashMap<K, V> implements LruMap<K, V> {
   static const _DEFAULT_MAXIMUM_SIZE = 100;
 
-  final Map<K, _LinkedEntry<K, V>> _entries;
+  final Map<K, _LinkedMapEntry<K, V>> _entries;
 
   int _maximumSize;
 
-  _LinkedEntry<K, V> _head;
-  _LinkedEntry<K, V> _tail;
+  _LinkedMapEntry<K, V> _head;
+  _LinkedMapEntry<K, V> _tail;
 
   /// Create a new LinkedLruHashMap with a [maximumSize].
   factory LinkedLruHashMap({int maximumSize}) =>
-      new LinkedLruHashMap._fromMap(new HashMap<K, _LinkedEntry<K, V>>(),
+      new LinkedLruHashMap._fromMap(new HashMap<K, _LinkedMapEntry<K, V>>(),
           maximumSize: maximumSize);
 
   LinkedLruHashMap._fromMap(this._entries, {int maximumSize})
@@ -114,8 +114,8 @@ class LinkedLruHashMap<K, V> implements LruMap<K, V> {
   bool get isNotEmpty => _entries.isNotEmpty;
 
   /// Creates an [Iterable] around the entries of the map.
-  Iterable<_LinkedEntry<K, V>> _iterable() {
-    return new GeneratingIterable<_LinkedEntry<K, V>>(
+  Iterable<_LinkedMapEntry<K, V>> _iterable() {
+    return new GeneratingIterable<_LinkedMapEntry<K, V>>(
         () => _head, (n) => n.next);
   }
 
@@ -214,7 +214,7 @@ class LinkedLruHashMap<K, V> implements LruMap<K, V> {
   String toString() => Maps.mapToString(this);
 
   /// Moves [entry] to the MRU position, shifting the linked list if necessary.
-  void _promoteEntry(_LinkedEntry<K, V> entry) {
+  void _promoteEntry(_LinkedMapEntry<K, V> entry) {
     if (entry.previous != null) {
       // If already existed in the map, link previous to next.
       entry.previous.next = entry.next;
@@ -241,14 +241,14 @@ class LinkedLruHashMap<K, V> implements LruMap<K, V> {
   }
 
   /// Creates and returns an entry from [key] and [value].
-  _LinkedEntry<K, V> _createEntry(K key, V value) {
-    return new _LinkedEntry<K, V>(key, value);
+  _LinkedMapEntry<K, V> _createEntry(K key, V value) {
+    return new _LinkedMapEntry<K, V>(key, value);
   }
 
   /// If [entry] does not exist, inserts it into the backing map. If it does,
   /// replaces the existing [_LinkedEntry.value] with [entry.value]. Then, in
   /// either case, promotes [entry] to the MRU position.
-  void _insertMru(_LinkedEntry<K, V> entry) {
+  void _insertMru(_LinkedMapEntry<K, V> entry) {
     // Insert a new entry if necessary (only 1 hash lookup in entire function).
     // Otherwise, just updates the existing value.
     final value = entry.value;
